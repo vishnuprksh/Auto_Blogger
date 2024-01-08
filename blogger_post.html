@@ -1,0 +1,87 @@
+<center>
+  <div>
+    <button id="btn1" onclick="showBlock1()"
+      style="background-color: #2b9a23; border-bottom-width: 1px; border-color: rgb(213, 213, 213); border-left-width: 1px; border-radius: 5px; border-right-width: 1px; border-top-width: 1px; border-width: 1px; color: white; cursor: pointer; font-size: medium; margin-bottom: 10px; margin-left: 10px; margin-right: 10px; margin-top: 10px; margin: 10px; padding-bottom: 10px; padding-left: 20px; padding-right: 20px; padding-top: 10px; padding: 10px 20px; width: 40%;">
+      Malayalam
+    </button>
+
+    <button id="btn2" onclick="showBlock2()"
+      style="background-color: #a3a3c2; border-bottom-width: 1px; border-color: rgb(213, 213, 213); border-left-width: 1px; border-radius: 5px; border-right-width: 1px; border-top-width: 1px; border-width: 1px; color: white; cursor: pointer; font-size: medium; margin-bottom: 10px; margin-left: 10px; margin-right: 10px; margin-top: 10px; margin: 10px; padding-bottom: 10px; padding-left: 20px; padding-right: 20px; padding-top: 10px; padding: 10px 20px; width: 40%;">
+      English
+    </button>
+  </div>
+
+  <div id="div1" style="display: block;">
+    <span style="font-size: medium;">Update soon!</object></span>
+  </div>
+
+  <div id="div2" style="display: none;">
+    <span style="font-size: large;"> Update soon!</span>
+  </div>
+
+
+
+  <br />
+
+  <table
+    style="background-color: #2b9a23; border-collapse: collapse; border: 1px solid black; color: white; text-align: center; width: 100%;">
+    <tbody>
+      <tr style="border: 1px solid black;">
+        <td style="border: 1px solid black; padding: 5px; width: 50%;">
+          Singer
+        </td>
+        <td id="singer_name" style="border: 1px solid black; padding: 5px; width: 50%;">
+          -
+        </td>
+      </tr>
+      <tr style="border: 1px solid black;">
+        <td style="border: 1px solid black; padding: 5px; width: 50%;">
+          Lyricist
+        </td>
+        <td id="lyricist_name" style="border: 1px solid black; padding: 5px; width: 50%;">
+          -
+        </td>
+      </tr>
+
+      <tr style="border: 1px solid black;">
+        <td style="border: 1px solid black; padding: 5px; width: 50%;">
+          Musician
+        </td>
+        <td id="musician_name" style="border: 1px solid black; padding: 5px; width: 50%;">
+          -
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <script>
+    function showBlock1() {
+      var x = document.getElementById("div1");
+      var y = document.getElementById("div2");
+      var a = document.getElementById("btn1");
+      var b = document.getElementById("btn2");
+
+      x.style.display = "block";
+      y.style.display = "none";
+
+      a.style.backgroundColor = "#2b9a23";
+      b.style.backgroundColor = "#a3a3c2";
+
+
+    }
+    function showBlock2() {
+      var x = document.getElementById("div1");
+      var y = document.getElementById("div2");
+      var a = document.getElementById("btn1");
+      var b = document.getElementById("btn2");
+
+      x.style.display = "none";
+      y.style.display = "block";
+
+      a.style.backgroundColor = "#a3a3c2"
+      b.style.backgroundColor = "#2b9a23";
+
+    }
+  </script>
+
+</center>
