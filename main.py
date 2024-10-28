@@ -37,14 +37,14 @@ def postToBlogger(payload):
 
 def build_html():
     # reading the lyrics from the lyrics.txt
-    with open("lyrics.txt", 'r') as file:
+    with open("lyrics.txt", 'r', encoding="utf-8") as file:
         lyrics_content = file.read()
 
     lyrics_soup = BeautifulSoup(lyrics_content, 'html.parser')
     first_div = lyrics_soup.find('div')
 
     # reading other song crew details form the details.txt
-    with open("details.txt", "r") as file:
+    with open("details.txt", "r", encoding="utf-8") as file:
         lines = file.readlines()
 
         singer = lines[0].strip()
@@ -52,7 +52,7 @@ def build_html():
         lyricist = lines[2].strip()
 
     # Reading the target HTML
-    with open("blogger_post.html", 'r') as file:
+    with open("blogger_post.html", 'r', encoding="utf-8") as file:
         target_soup = BeautifulSoup(file, 'html.parser')  
 
     # inserting the lyrics to the template
@@ -73,7 +73,7 @@ def build_html():
 
 
     # removing the pulled lyrics from source file    
-    with open("lyrics.txt", 'w') as file:
+    with open("lyrics.txt", 'w', encoding="utf-8") as file:
         file.write(str(lyrics_soup))
 
     # returning the modified post template
@@ -83,7 +83,7 @@ def build_html():
 
 def get_title():
     # reading song title details from the details.txt
-    with open("details.txt", "r") as file:
+    with open("details.txt", "r", encoding="utf-8") as file:
         lines = file.readlines()
 
         title_english = lines[3].strip()
@@ -95,7 +95,7 @@ def get_title():
 
 def get_labels():
     # reading song details from the details.txt
-    with open("details.txt", "r") as file:
+    with open("details.txt", "r", encoding="utf-8") as file:
         lines = file.readlines()
 
         singer = lines[0].strip().replace(" ", "_")
@@ -103,7 +103,7 @@ def get_labels():
         lyricist = lines[2].strip().replace(" ", "_")
         movie = lines[5].strip().replace(" ", "_")
 
-    with open("details.txt", "w") as file:
+    with open("details.txt", "w", encoding="utf-8") as file:
         file.writelines(lines[6:])
 
     return ["Movie_Song", "Malayalam", movie, singer, musician, lyricist,]
